@@ -2,16 +2,50 @@
 <html lang='en'>
   <head>
     <meta charset='UTF-8' />
-    <title>Floats</title>
+    <title>Positioning</title>
     <link href="./resources/css/index.css" type="text/css" rel="stylesheet">
 
   </head>
   <body>
-    <div class='page'>
-      <div class='menu'>Menu</div>
-      <div class='sidebar'>Sidebar</div>
-      <div class='content'>Content</div>
-      <div class='footer'>Footer</div>
+
+    <div class='container'>
+       <div class='example relative'>
+         <div class='item'><img src="./resources/images/static.svg" /></div>
+         <div class='item item-relative'><img src='./resources/images/relative.svg' /></div>
+         <div class='item'><img src='./resources/images/static.svg' /></div>
+       </div>
     </div>
+
+    <div class='container'>
+      <div class='example absolute'>
+        <div class='item'><img src='./resources/images/static.svg' /></div>
+        <div class='item item-absolute'><img src='./resources/images/absolute.svg' /></div>
+        <div class='item'><img src='./resources/images/static.svg' /></div>
+      </div>
+    </div>
+
+    <div class='container'>
+     <div class='example fixed'>
+       <div class='item'><img src='./resources/images/static.svg' /></div>
+       <div class='item item-fixed'><img src='./resources/images/fixed.svg' /></div>
+       <div class='item'><img src='./resources/images/static.svg' /></div>
+     </div>
+    </div>
+
+    <script>
+  var left = 0;
+
+  function frame() {
+    var element = document.querySelector('.item-relative');
+    left += 2;
+    element.style.left = left + 'px';
+    if (left >= 300) {
+      clearInterval(id)
+    }
+  }
+
+  var id = setInterval(frame, 10)
+</script>
+
   </body>
 </html>
